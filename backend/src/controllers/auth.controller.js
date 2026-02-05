@@ -30,7 +30,7 @@ export const signup = async (req, res) => {
       password: hashedPassword,
     });
     if (newUser) {
-      await newUser.save();
+      const savedUser = await newUser.save();
       generateToken(newUser._id, res);
       res.status(201).json({
         _id: newUser._id,
