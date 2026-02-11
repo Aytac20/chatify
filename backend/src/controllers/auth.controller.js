@@ -1,9 +1,9 @@
 import bcrypt from "bcryptjs";
-import { sendWelcomeEmail } from "../emails/emailHandlers.js";
 import { ENV } from "../lib/env.js";
 import { generateToken } from "../lib/utils.js";
 import User from "../models/User.js";
 import cloudinary from "./../lib/cloudinary.js";
+import { sendWelcomeEmail } from "../emails/emailHandlers.js";
 export const signup = async (req, res) => {
   try {
     const { fullName, email, password } = req.body;
