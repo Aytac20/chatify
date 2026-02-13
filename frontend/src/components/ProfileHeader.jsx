@@ -32,6 +32,7 @@ const ProfileHeader = () => {
           <div className="avatar online">
             <button
               className="size-14 rounded-full overflow-hidden relative group"
+              disabled={isImageUpdating}
               onClick={() => fileInputRef.current.click()}
             >
               <img

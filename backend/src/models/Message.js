@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const messageSchema = new mongoose.Schema(
   {
     senderId: {
@@ -14,7 +15,7 @@ const messageSchema = new mongoose.Schema(
     text: {
       type: String,
       trim: true,
-      maxLength: 2000,
+      maxlength: 2000,
     },
     image: {
       type: String,
@@ -22,5 +23,7 @@ const messageSchema = new mongoose.Schema(
   },
   { timestamps: true },
 );
+
 const Message = mongoose.model("Message", messageSchema);
+
 export default Message;

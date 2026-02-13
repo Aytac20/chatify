@@ -3,12 +3,12 @@ import { useChatStore } from "../store/useChatStore";
 import UsersLoadingSkeleton from "./UsersLoadingSkeleton";
 
 const ContactsList = () => {
-  const { isUserLoading, allContacts, setSelectedUser, getAllContacts } =
+  const { isUsersLoading, allContacts, setSelectedUser, getAllContacts } =
     useChatStore();
   useEffect(() => {
     getAllContacts();
   }, [getAllContacts]);
-  if (isUserLoading) return <UsersLoadingSkeleton />;
+  if (isUsersLoading) return <UsersLoadingSkeleton />;
 
   return (
     <>
