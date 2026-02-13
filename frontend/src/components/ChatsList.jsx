@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useChatStore } from "../store/useChatStore";
 import UsersLoadingSkeleton from "./UsersLoadingSkeleton";
 import NoChatsFound from "./NoChatsFound";
 
-const ChatsList = () => {
-  const { isUserLoading, chats, setSelectedUser, getMyChatPartners } =
+function ChatsList() {
+  const { getMyChatPartners, chats, isUsersLoading, setSelectedUser } =
     useChatStore();
+
   useEffect(() => {
     getMyChatPartners();
   }, [getMyChatPartners]);
-  if (isUserLoading) return <UsersLoadingSkeleton />;
-  if (chats.length) return <NoChatsFound />;
+
+  if (isUsersLoading) return <UsersLoadingSkeleton />;
+  if (chats.length === 0) return <NoChatsFound />;
 
   return (
     <>
@@ -37,6 +39,5 @@ const ChatsList = () => {
       ))}
     </>
   );
-};
-
+}
 export default ChatsList;

@@ -19,8 +19,8 @@ export const getMessagesByUserId = async (req, res) => {
     const { id: userToChatId } = req.params;
     const messages = await Message.find({
       $or: [
-        { senderId: myId, recieverId: userToChatId },
-        { senderId: userToChatId, recieverId: myId },
+        { senderId: myId, receiverId: userToChatId },
+        { senderId: userToChatId, receiverId: myId },
       ],
     });
     res.status(200).json(messages);
@@ -82,7 +82,9 @@ export const getChatPartners = async (req, res) => {
         ),
       ),
     ];
-    const chatPartners = await User.find({ _id: { $in: chatPartnerIds } });
+    const chatPartners = await User.find({
+      _id: { $in: chatPartnerIds },
+    }).select("-password");
     res.status(200).json(chatPartners);
   } catch (error) {
     console.log("Error in getChatPartners controller", error);
