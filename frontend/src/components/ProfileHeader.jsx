@@ -13,6 +13,7 @@ const ProfileHeader = () => {
   const { logout, authUser, updateProfile, isImageUpdating } = useAuthStore();
   const { isSoundEnabled, toggleSound } = useChatStore();
   const fileInputRef = useRef();
+
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -24,6 +25,7 @@ const ProfileHeader = () => {
       await updateProfile({ profilePic: base64Image });
     };
   };
+
   return (
     <div className=" p-6 border-b border-slate-700/50">
       <div className="flex items-center justify-between">
