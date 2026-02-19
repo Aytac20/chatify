@@ -9,13 +9,13 @@ const MessageInput = () => {
   const { playRandomKeyStrokeSound } = useKeyboardSound();
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
-  const { sendMessage, isSoundEnable } = useChatStore();
+  const { sendMessage, isSoundEnabled } = useChatStore();
   const fileInputRef = useRef(null);
   const handleSendMessage = (e) => {
     e.preventDefault();
 
     if (!text.trim() && !imagePreview) return;
-    if (isSoundEnable) playRandomKeyStrokeSound();
+    if (isSoundEnabled) playRandomKeyStrokeSound();
     sendMessage({
       text: text.trim(),
       image: imagePreview,
@@ -68,7 +68,7 @@ const MessageInput = () => {
           type="text"
           onChange={(e) => {
             setText(e.target.value);
-            isSoundEnable && playRandomKeyStrokeSound();
+            isSoundEnabled && playRandomKeyStrokeSound();
           }}
           className="flex-1 bg-slate-800/50 border border-slate-700/50 rounded-lg py-2 px-4"
           placeholder="Type your message..."
