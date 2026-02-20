@@ -1,7 +1,11 @@
-# 💬 Full-Stack Chat App with Auth & Emails
+<h1 align="center">💬 Full-Stack Chat App with Auth & Emails</h1>
 
 ![Banner](https://github.com/user-attachments/assets/c38e760a-c8ae-412f-bb0c-78d8d2a9ed6b)
+---
+## 🌐 Live Demo
 
+👉 [Click here to view the live demo][(https://your-app.onrender.com)](https://chatify-app.sevalla.app/)
+---
 ## ✨ Features
 
 - 🔐 Custom JWT Authentication (no 3rd-party auth)
@@ -17,7 +21,7 @@
 - 🧠 Zustand for State Management
 - 🧑‍💻 Git & GitHub Workflow
 - 🚀 Easy Deployment
-
+---
 ## 🛠️ Tools
 
 | Frontend | Backend | Database | Other |
@@ -26,12 +30,6 @@
 | Tailwind CSS | Socket.io | | Resend |
 | DaisyUI | JWT | | Arcjet |
 | Zustand | REST API | | |
+---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js
-- MongoDB
-- Cloudinary account
-- Resend account
 
